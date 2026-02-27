@@ -82,7 +82,7 @@ export default function Testimonials() {
   }, [testimonials.length])
 
   return (
-    <section ref={sectionRef} className="relative py-32 px-6 overflow-hidden">
+    <section ref={sectionRef} id="testimonials" className="relative py-32 px-6 overflow-hidden">
 
       <div className="relative max-w-7xl mx-auto">
         {/* Header */}

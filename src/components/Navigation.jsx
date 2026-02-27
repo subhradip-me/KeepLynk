@@ -10,20 +10,24 @@ export default function Navigation() {
       setIsScrolled(window.scrollY > 20)
 
       // Update active section based on scroll position
-      const sections = ['hero', 'features', 'waitlist']
+      const sections = ['hero', 'features', 'how-it-works', 'pricing', 'testimonials', 'faq', 'waitlist']
+      let currentSection = 'hero'
+
       for (const section of sections) {
         const element = document.getElementById(section)
         if (element) {
           const rect = element.getBoundingClientRect()
-          if (rect.top <= 100 && rect.bottom >= 100) {
-            setActiveSection(section)
+          if (rect.top <= 120 && rect.bottom >= 120) {
+            currentSection = section
             break
           }
         }
       }
+      setActiveSection(currentSection)
     }
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll() // Initial check
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -48,6 +52,7 @@ export default function Navigation() {
     { name: 'Features', id: 'features' },
     { name: 'How It Works', id: 'how-it-works' },
     { name: 'Pricing', id: 'pricing' },
+    { name: 'Testimonials', id: 'testimonials' },
     { name: 'FAQ', id: 'faq' }
   ]
 
@@ -152,13 +157,7 @@ export default function Navigation() {
         }`}>
           <div className="text-center space-y-6">
             {/* Mobile Menu Items */}
-            {[
-              { name: 'Home', id: 'hero' },
-              { name: 'Features', id: 'features' },
-              { name: 'How It Works', id: 'how-it-works' },
-              { name: 'Pricing', id: 'pricing' },
-              { name: 'FAQ', id: 'faq' }
-            ].map((item, index) => (
+            {navItems.map((item, index) => (
               <div
                 key={item.name}
                 className={`transition-all duration-500 ease-out ${

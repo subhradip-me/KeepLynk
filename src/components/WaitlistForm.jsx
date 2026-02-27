@@ -46,7 +46,7 @@ export default function WaitlistForm() {
   }
 
   return (
-    <section ref={sectionRef} className="relative py-32 px-6 overflow-hidden">
+    <section ref={sectionRef} id="waitlist" className="relative py-32 px-6 overflow-hidden">
 
       <div className="relative z-10 max-w-5xl mx-auto text-center waitlist-content">
         {/* Header */}

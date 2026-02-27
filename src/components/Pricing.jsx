@@ -81,7 +81,7 @@ export default function Pricing() {
   ]
 
   return (
-    <section className="relative py-32 px-6 overflow-hidden">
+    <section id="pricing" className="relative py-32 px-6 overflow-hidden">
 
       <div className="relative max-w-7xl mx-auto">
         {/* Header */}

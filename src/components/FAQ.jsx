@@ -47,7 +47,7 @@ export default function FAQ() {
   ]
 
   return (
-    <section className="relative py-32 px-6 overflow-hidden">
+    <section id="faq" className="relative py-32 px-6 overflow-hidden">
 
       <div className="relative max-w-4xl mx-auto">
         {/* Header */}
