@@ -47,20 +47,6 @@ export default function WaitlistForm() {
 
   return (
     <section ref={sectionRef} className="relative py-32 px-6 overflow-hidden">
-      {/* Premium gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-800 to-slate-900"></div>
-
-      {/* Animated gradient orbs */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-gradient-to-br from-violet-600/20 to-purple-600/10 rounded-full blur-3xl animate-float-slow"></div>
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-br from-emerald-600/15 to-teal-600/10 rounded-full blur-3xl animate-float-delayed"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-br from-zinc-700/20 to-slate-700/10 rounded-full blur-3xl"></div>
-      </div>
-
-      {/* Subtle grid overlay */}
-      <div className="absolute inset-0 opacity-[0.02]">
-        <div className="w-full h-full bg-[linear-gradient(rgba(255,255,255,1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,1)_1px,transparent_1px)] bg-[size:80px_80px]"></div>
-      </div>
 
       <div className="relative z-10 max-w-5xl mx-auto text-center waitlist-content">
         {/* Header */}

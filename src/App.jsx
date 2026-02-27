@@ -75,31 +75,29 @@ export default function App() {
   console.log('Main content should be visible now')
 
   return (
-    <div className="min-h-screen bg-zinc-50 text-zinc-900">
+    <div className="min-h-screen bg-gradient-to-br from-zinc-900 via-zinc-800 to-slate-900 text-white">
+      {/* Global background effects */}
+      <div className="fixed inset-0 pointer-events-none">
+        {/* Animated orbs */}
+        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-gradient-to-br from-violet-600/20 to-purple-600/10 rounded-full blur-3xl animate-float-slow"></div>
+        <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-emerald-600/15 to-teal-600/10 rounded-full blur-3xl animate-float-delayed"></div>
+        <div className="absolute bottom-0 left-1/3 w-[700px] h-[700px] bg-gradient-to-tr from-zinc-700/20 to-slate-700/10 rounded-full blur-3xl animate-float"></div>
+        {/* Grid pattern */}
+        <div className="absolute inset-0 opacity-[0.02]">
+          <div className="w-full h-full bg-[linear-gradient(rgba(255,255,255,1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,1)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
+        </div>
+      </div>
+
       <Navigation />
-      <main>
-        <section id="hero">
-          <Hero />
-        </section>
-        <section id="features">
-          <Features />
-        </section>
-        <section id="how-it-works">
-          <HowItWorks />
-        </section>
-        <section id="pricing">
-          <Pricing />
-        </section>
-        <section id="testimonials">
-          <Testimonials />
-        </section>
-        <section id="faq">
-          <FAQ />
-        </section>
+      <main className="relative z-10">
+        <Hero />
+        <Features />
+        <HowItWorks />
+        <Pricing />
+        <Testimonials />
+        <FAQ />
         <CTA />
-        <section id="waitlist">
-          <WaitlistForm />
-        </section>
+        <WaitlistForm />
       </main>
       <Footer />
     </div>

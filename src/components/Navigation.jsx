@@ -56,7 +56,7 @@ export default function Navigation() {
       {/* Desktop Navigation */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ease-out ${
         isScrolled
-          ? 'bg-white/80 backdrop-blur-xl border-b border-zinc-200/50 shadow-sm'
+          ? 'bg-zinc-900/80 backdrop-blur-xl border-b border-white/10'
           : 'bg-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,15 +65,15 @@ export default function Navigation() {
             <div className="flex-shrink-0">
               <button
                 onClick={() => scrollToSection('hero')}
-                className="text-xl lg:text-2xl font-extralight tracking-wide transition-all duration-500 hover:tracking-wider text-zinc-900 group"
+                className="text-xl lg:text-2xl font-extralight tracking-wide transition-all duration-500 hover:tracking-wider text-white group"
               >
-                Keep<span className="font-light text-zinc-600 italic ml-px group-hover:text-zinc-800 transition-colors">Lynk</span>
+                Keep<span className="font-light text-zinc-400 italic ml-px group-hover:text-zinc-300 transition-colors">Lynk</span>
               </button>
             </div>
 
             {/* Desktop Menu */}
             <div className="hidden lg:flex items-center">
-              <div className="flex items-center space-x-1 bg-zinc-100/50 backdrop-blur-sm rounded-full p-1 border border-zinc-200/50">
+              <div className="flex items-center space-x-1 bg-white/10 backdrop-blur-sm rounded-full p-1 border border-white/10">
                 {navItems.map((item) => (
                   <button
                     key={item.name}
@@ -81,7 +81,7 @@ export default function Navigation() {
                     className={`relative px-5 py-2 text-sm font-medium transition-all duration-300 rounded-full ${
                       activeSection === item.id
                         ? 'text-zinc-900 bg-white shadow-sm'
-                        : 'text-zinc-500 hover:text-zinc-700'
+                        : 'text-zinc-300 hover:text-white'
                     }`}
                   >
                     {item.name}
@@ -92,7 +92,7 @@ export default function Navigation() {
               <div className="ml-6">
                 <button
                   onClick={() => scrollToSection('waitlist')}
-                  className="group relative overflow-hidden bg-zinc-900 text-white px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 hover:shadow-lg hover:shadow-zinc-900/20"
+                  className="group relative overflow-hidden bg-white text-zinc-900 px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 hover:shadow-lg hover:shadow-white/20"
                 >
                   <span className="relative z-10 flex items-center">
                     Join Waitlist
@@ -108,21 +108,21 @@ export default function Navigation() {
             <div className="lg:hidden">
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="relative w-10 h-10 flex flex-col justify-center items-center rounded-full bg-zinc-100/80 backdrop-blur-sm border border-zinc-200/50 transition-all duration-300"
+                className="relative w-10 h-10 flex flex-col justify-center items-center rounded-full bg-white/10 backdrop-blur-sm border border-white/10 transition-all duration-300"
                 aria-label="Toggle menu"
               >
                 <span
-                  className={`block h-0.5 w-5 bg-zinc-700 transition-all duration-300 ease-out ${
+                  className={`block h-0.5 w-5 bg-zinc-300 transition-all duration-300 ease-out ${
                     isMobileMenuOpen ? 'rotate-45 translate-y-1' : ''
                   }`}
                 />
                 <span
-                  className={`block h-0.5 w-5 bg-zinc-700 transition-all duration-300 ease-out mt-1 ${
+                  className={`block h-0.5 w-5 bg-zinc-300 transition-all duration-300 ease-out mt-1 ${
                     isMobileMenuOpen ? 'opacity-0' : ''
                   }`}
                 />
                 <span
-                  className={`block h-0.5 w-5 bg-zinc-700 transition-all duration-300 ease-out mt-1 ${
+                  className={`block h-0.5 w-5 bg-zinc-300 transition-all duration-300 ease-out mt-1 ${
                     isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
                   }`}
                 />
@@ -140,7 +140,7 @@ export default function Navigation() {
       }`}>
         {/* Backdrop */}
         <div
-          className={`absolute inset-0 bg-white/98 backdrop-blur-2xl transition-all duration-500 ease-out ${
+          className={`absolute inset-0 bg-zinc-900/98 backdrop-blur-2xl transition-all duration-500 ease-out ${
             isMobileMenuOpen ? 'opacity-100' : 'opacity-0'
           }`}
           onClick={() => setIsMobileMenuOpen(false)}
@@ -174,7 +174,7 @@ export default function Navigation() {
                     setIsMobileMenuOpen(false)
                   }}
                   className={`block text-3xl font-extralight transition-colors duration-300 tracking-wide hover:tracking-wider ${
-                    activeSection === item.id ? 'text-zinc-900' : 'text-zinc-400 hover:text-zinc-700'
+                    activeSection === item.id ? 'text-white' : 'text-zinc-400 hover:text-zinc-200'
                   }`}
                 >
                   {item.name}
@@ -195,7 +195,7 @@ export default function Navigation() {
                   scrollToSection('waitlist')
                   setIsMobileMenuOpen(false)
                 }}
-                className="bg-zinc-900 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:bg-zinc-800 hover:scale-105 shadow-lg shadow-zinc-900/20"
+                className="bg-white text-zinc-900 px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:bg-zinc-100 hover:scale-105 shadow-lg shadow-white/20"
               >
                 Join Waitlist
               </button>

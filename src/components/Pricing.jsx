@@ -81,37 +81,32 @@ export default function Pricing() {
   ]
 
   return (
-    <section className="relative py-32 px-6 bg-zinc-50 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-gradient-to-br from-violet-100/50 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-gradient-to-bl from-emerald-100/40 to-transparent rounded-full blur-3xl"></div>
-      </div>
+    <section className="relative py-32 px-6 overflow-hidden">
 
       <div className="relative max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white border border-zinc-200 text-zinc-600 text-sm font-medium mb-8 shadow-sm">
-            <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 animate-pulse"></span>
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 border border-white/10 text-zinc-300 text-sm font-medium mb-8">
+            <span className="w-2 h-2 bg-emerald-400 rounded-full mr-3 animate-pulse"></span>
             <span>Pricing</span>
           </div>
 
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extralight text-zinc-900 mb-8 tracking-tight leading-[0.9]">
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extralight text-white mb-8 tracking-tight leading-[0.9]">
             <span className="block">Simple,</span>
-            <span className="block font-normal italic bg-gradient-to-r from-zinc-600 via-zinc-500 to-zinc-600 bg-clip-text text-transparent">transparent</span>
+            <span className="block font-normal italic bg-gradient-to-r from-zinc-400 via-white to-zinc-400 bg-clip-text text-transparent">transparent</span>
             <span className="block">pricing</span>
           </h2>
 
-          <p className="text-xl sm:text-2xl text-zinc-500 font-light max-w-3xl mx-auto leading-relaxed mb-10">
+          <p className="text-xl sm:text-2xl text-zinc-400 font-light max-w-3xl mx-auto leading-relaxed mb-10">
             Start free, upgrade when you need. No hidden fees, cancel anytime.
           </p>
 
           {/* Billing toggle */}
-          <div className="inline-flex items-center gap-4 p-1.5 bg-white rounded-full border border-zinc-200 shadow-sm">
+          <div className="inline-flex items-center gap-4 p-1.5 bg-white/10 rounded-full border border-white/10">
             <button
               onClick={() => setIsAnnual(false)}
               className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
-                !isAnnual ? 'bg-zinc-900 text-white shadow-md' : 'text-zinc-600 hover:text-zinc-900'
+                !isAnnual ? 'bg-white text-zinc-900 shadow-md' : 'text-zinc-300 hover:text-white'
               }`}
             >
               Monthly
@@ -119,11 +114,11 @@ export default function Pricing() {
             <button
               onClick={() => setIsAnnual(true)}
               className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
-                isAnnual ? 'bg-zinc-900 text-white shadow-md' : 'text-zinc-600 hover:text-zinc-900'
+                isAnnual ? 'bg-white text-zinc-900 shadow-md' : 'text-zinc-300 hover:text-white'
               }`}
             >
               Annual
-              <span className="px-2 py-0.5 bg-emerald-100 text-emerald-700 text-xs rounded-full font-semibold">
+              <span className="px-2 py-0.5 bg-emerald-500/20 text-emerald-400 text-xs rounded-full font-semibold">
                 Save 25%
               </span>
             </button>
@@ -137,8 +132,8 @@ export default function Pricing() {
               key={index}
               className={`relative flex flex-col rounded-3xl p-6 lg:p-8 transition-all duration-300 hover:-translate-y-1 ${
                 plan.popular
-                  ? 'bg-zinc-900 text-white shadow-2xl shadow-zinc-900/20 scale-105 z-10'
-                  : 'bg-white border border-zinc-200 hover:border-zinc-300 hover:shadow-xl'
+                  ? 'bg-white/10 text-white border border-white/20 shadow-2xl scale-105 z-10'
+                  : 'bg-white/5 border border-white/10 hover:border-white/20 hover:bg-white/10'
               }`}
             >
               {/* Popular badge */}
@@ -152,10 +147,10 @@ export default function Pricing() {
 
               {/* Plan header */}
               <div className="mb-6">
-                <h3 className={`text-xl font-semibold mb-2 ${plan.popular ? 'text-white' : 'text-zinc-900'}`}>
+                <h3 className="text-xl font-semibold mb-2 text-white">
                   {plan.name}
                 </h3>
-                <p className={`text-sm ${plan.popular ? 'text-zinc-300' : 'text-zinc-500'}`}>
+                <p className="text-sm text-zinc-400">
                   {plan.description}
                 </p>
               </div>
@@ -164,18 +159,18 @@ export default function Pricing() {
               <div className="mb-6">
                 {plan.monthlyPrice !== null ? (
                   <div className="flex items-baseline gap-1">
-                    <span className={`text-4xl font-light ${plan.popular ? 'text-white' : 'text-zinc-900'}`}>
+                    <span className="text-4xl font-light text-white">
                       ${isAnnual ? plan.annualPrice : plan.monthlyPrice}
                     </span>
-                    <span className={plan.popular ? 'text-zinc-400' : 'text-zinc-500'}>/month</span>
+                    <span className="text-zinc-400">/month</span>
                   </div>
                 ) : (
-                  <div className={`text-2xl font-light ${plan.popular ? 'text-white' : 'text-zinc-900'}`}>
+                  <div className="text-2xl font-light text-white">
                     Custom
                   </div>
                 )}
                 {isAnnual && plan.monthlyPrice > 0 && (
-                  <p className={`text-sm mt-1 ${plan.popular ? 'text-zinc-400' : 'text-zinc-500'}`}>
+                  <p className="text-sm mt-1 text-zinc-400">
                     Billed annually (${plan.annualPrice * 12}/year)
                   </p>
                 )}
@@ -187,10 +182,10 @@ export default function Pricing() {
                   plan.ctaStyle === 'primary'
                     ? 'bg-white text-zinc-900 hover:bg-zinc-100 shadow-lg'
                     : plan.ctaStyle === 'outline'
-                    ? 'border-2 border-zinc-600 text-zinc-300 hover:bg-zinc-800'
+                    ? 'border-2 border-white/30 text-white hover:bg-white/10'
                     : plan.popular
-                    ? 'bg-zinc-800 text-white hover:bg-zinc-700 border border-zinc-700'
-                    : 'bg-zinc-900 text-white hover:bg-zinc-800'
+                    ? 'bg-white/20 text-white hover:bg-white/30 border border-white/30'
+                    : 'bg-white/10 text-white hover:bg-white/20 border border-white/20'
                 }`}
               >
                 {plan.cta}
@@ -198,21 +193,21 @@ export default function Pricing() {
 
               {/* Features */}
               <div className="flex-1">
-                <p className={`text-xs font-semibold uppercase tracking-wider mb-4 ${plan.popular ? 'text-zinc-400' : 'text-zinc-400'}`}>
+                <p className="text-xs font-semibold uppercase tracking-wider mb-4 text-zinc-400">
                   Features
                 </p>
                 <ul className="space-y-3">
                   {plan.features.map((feature, fIndex) => (
                     <li key={fIndex} className="flex items-start gap-3">
                       <svg
-                        className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.popular ? 'text-emerald-400' : 'text-emerald-500'}`}
+                        className="w-5 h-5 flex-shrink-0 mt-0.5 text-emerald-400"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
                       >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      <span className={`text-sm ${plan.popular ? 'text-zinc-300' : 'text-zinc-600'}`}>
+                      <span className="text-sm text-zinc-300">
                         {feature}
                       </span>
                     </li>
@@ -224,7 +219,7 @@ export default function Pricing() {
         </div>
 
         {/* Trust badges */}
-        <div className="mt-16 flex flex-wrap items-center justify-center gap-8 text-zinc-400">
+        <div className="mt-16 flex flex-wrap items-center justify-center gap-8 text-zinc-500">
           <div className="flex items-center gap-2">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />

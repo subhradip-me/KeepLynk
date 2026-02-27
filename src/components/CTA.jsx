@@ -3,17 +3,6 @@ import React from 'react'
 export default function CTA() {
   return (
     <section className="relative py-24 px-6 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-800 to-slate-900">
-        {/* Animated orbs */}
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-gradient-to-br from-violet-600/20 to-purple-600/10 rounded-full blur-3xl animate-float-slow"></div>
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-gradient-to-br from-emerald-600/15 to-teal-600/10 rounded-full blur-3xl animate-float-delayed"></div>
-      </div>
-
-      {/* Grid pattern */}
-      <div className="absolute inset-0 opacity-[0.02]">
-        <div className="w-full h-full bg-[linear-gradient(rgba(255,255,255,1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,1)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
-      </div>
 
       <div className="relative max-w-5xl mx-auto text-center">
         {/* Badge */}

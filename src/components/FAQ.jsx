@@ -47,27 +47,22 @@ export default function FAQ() {
   ]
 
   return (
-    <section className="relative py-32 px-6 bg-zinc-50 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-violet-100/50 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-emerald-100/40 to-transparent rounded-full blur-3xl"></div>
-      </div>
+    <section className="relative py-32 px-6 overflow-hidden">
 
       <div className="relative max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white border border-zinc-200 text-zinc-600 text-sm font-medium mb-8 shadow-sm">
-            <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 animate-pulse"></span>
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 border border-white/10 text-zinc-300 text-sm font-medium mb-8">
+            <span className="w-2 h-2 bg-emerald-400 rounded-full mr-3 animate-pulse"></span>
             <span>FAQ</span>
           </div>
 
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extralight text-zinc-900 mb-8 tracking-tight leading-[0.9]">
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extralight text-white mb-8 tracking-tight leading-[0.9]">
             <span className="block">Questions?</span>
-            <span className="block font-normal italic bg-gradient-to-r from-zinc-600 via-zinc-500 to-zinc-600 bg-clip-text text-transparent">Answered.</span>
+            <span className="block font-normal italic bg-gradient-to-r from-zinc-400 via-white to-zinc-400 bg-clip-text text-transparent">Answered.</span>
           </h2>
 
-          <p className="text-xl sm:text-2xl text-zinc-500 font-light max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl sm:text-2xl text-zinc-400 font-light max-w-3xl mx-auto leading-relaxed">
             Everything you need to know about KeepLynk
           </p>
         </div>
@@ -77,10 +72,10 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className={`bg-white rounded-2xl border transition-all duration-300 overflow-hidden ${
+              className={`bg-white/5 rounded-2xl border transition-all duration-300 overflow-hidden ${
                 openIndex === index
-                  ? 'border-zinc-300 shadow-lg shadow-zinc-900/5'
-                  : 'border-zinc-200 hover:border-zinc-300'
+                  ? 'border-white/20 shadow-lg'
+                  : 'border-white/10 hover:border-white/20'
               }`}
             >
               <button
@@ -88,14 +83,14 @@ export default function FAQ() {
                 className="w-full flex items-center justify-between p-6 text-left"
               >
                 <span className={`text-lg font-medium pr-8 transition-colors duration-300 ${
-                  openIndex === index ? 'text-zinc-900' : 'text-zinc-700'
+                  openIndex === index ? 'text-white' : 'text-zinc-300'
                 }`}>
                   {faq.question}
                 </span>
                 <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
                   openIndex === index
-                    ? 'bg-zinc-900 text-white rotate-180'
-                    : 'bg-zinc-100 text-zinc-600'
+                    ? 'bg-white text-zinc-900 rotate-180'
+                    : 'bg-white/10 text-zinc-400'
                 }`}>
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -109,7 +104,7 @@ export default function FAQ() {
                 }`}
               >
                 <div className="px-6 pb-6">
-                  <p className="text-zinc-600 font-light leading-relaxed">
+                  <p className="text-zinc-400 font-light leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>
@@ -120,23 +115,23 @@ export default function FAQ() {
 
         {/* Still have questions */}
         <div className="mt-16 text-center">
-          <div className="inline-flex flex-col sm:flex-row items-center gap-4 p-8 bg-white rounded-3xl border border-zinc-200 shadow-sm">
+          <div className="inline-flex flex-col sm:flex-row items-center gap-4 p-8 bg-white/5 rounded-3xl border border-white/10">
             <div className="text-center sm:text-left">
-              <h3 className="text-xl font-medium text-zinc-900 mb-2">Still have questions?</h3>
-              <p className="text-zinc-500 font-light">
+              <h3 className="text-xl font-medium text-white mb-2">Still have questions?</h3>
+              <p className="text-zinc-400 font-light">
                 Can't find the answer you're looking for? Our team is here to help.
               </p>
             </div>
             <div className="flex gap-3">
               <a
                 href="mailto:support@keeplink.io"
-                className="inline-flex items-center px-6 py-3 bg-zinc-900 text-white rounded-xl font-medium transition-all duration-300 hover:bg-zinc-800 hover:shadow-lg"
+                className="inline-flex items-center px-6 py-3 bg-white text-zinc-900 rounded-xl font-medium transition-all duration-300 hover:bg-zinc-100 hover:shadow-lg"
               >
                 Contact Support
               </a>
               <a
                 href="#"
-                className="inline-flex items-center px-6 py-3 border border-zinc-300 text-zinc-700 rounded-xl font-medium transition-all duration-300 hover:bg-zinc-50"
+                className="inline-flex items-center px-6 py-3 border border-white/20 text-zinc-300 rounded-xl font-medium transition-all duration-300 hover:bg-white/10"
               >
                 View Docs
               </a>

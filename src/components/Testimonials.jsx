@@ -82,27 +82,22 @@ export default function Testimonials() {
   }, [testimonials.length])
 
   return (
-    <section ref={sectionRef} className="relative py-32 px-6 bg-white overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-gradient-to-br from-violet-50 to-transparent rounded-full blur-3xl opacity-60"></div>
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-tl from-emerald-50 to-transparent rounded-full blur-3xl opacity-50"></div>
-      </div>
+    <section ref={sectionRef} className="relative py-32 px-6 overflow-hidden">
 
       <div className="relative max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-zinc-100/80 text-zinc-600 text-sm font-medium mb-8">
-            <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 animate-pulse"></span>
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 text-zinc-300 text-sm font-medium mb-8 border border-white/10">
+            <span className="w-2 h-2 bg-emerald-400 rounded-full mr-3 animate-pulse"></span>
             <span>Testimonials</span>
           </div>
 
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extralight text-zinc-900 mb-8 tracking-tight leading-[0.9]">
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extralight text-white mb-8 tracking-tight leading-[0.9]">
             <span className="block">Loved by</span>
-            <span className="block font-normal italic bg-gradient-to-r from-zinc-600 via-zinc-500 to-zinc-600 bg-clip-text text-transparent">thousands</span>
+            <span className="block font-normal italic bg-gradient-to-r from-zinc-400 via-white to-zinc-400 bg-clip-text text-transparent">thousands</span>
           </h2>
 
-          <p className="text-xl sm:text-2xl text-zinc-500 font-light max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl sm:text-2xl text-zinc-400 font-light max-w-3xl mx-auto leading-relaxed">
             See what teams around the world are saying about KeepLynk
           </p>
         </div>
@@ -166,9 +161,9 @@ export default function Testimonials() {
             { value: '4.9/5', label: 'Average rating' },
             { value: '99.9%', label: 'Uptime' }
           ].map((stat, index) => (
-            <div key={index} className="text-center p-6 bg-zinc-50 rounded-2xl border border-zinc-100">
-              <div className="text-3xl lg:text-4xl font-extralight text-zinc-900 mb-2">{stat.value}</div>
-              <div className="text-sm text-zinc-500 font-medium">{stat.label}</div>
+            <div key={index} className="text-center p-6 bg-white/5 rounded-2xl border border-white/10">
+              <div className="text-3xl lg:text-4xl font-extralight text-white mb-2">{stat.value}</div>
+              <div className="text-sm text-zinc-400 font-medium">{stat.label}</div>
             </div>
           ))}
         </div>

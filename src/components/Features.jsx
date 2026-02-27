@@ -87,33 +87,22 @@ export default function Features() {
   ]
 
   return (
-    <section ref={sectionRef} className="relative py-32 px-6 bg-white overflow-hidden">
-      {/* Enhanced background elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 -left-1/4 w-[500px] h-[500px] bg-gradient-to-br from-violet-100/50 to-purple-100/30 rounded-full blur-3xl opacity-60 animate-float-slow"></div>
-        <div className="absolute bottom-1/4 -right-1/4 w-[400px] h-[400px] bg-gradient-to-br from-emerald-100/40 to-teal-100/20 rounded-full blur-3xl opacity-50 animate-float-delayed"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-zinc-100/60 to-gray-100/30 rounded-full blur-3xl opacity-40"></div>
-      </div>
-
-      {/* Subtle grid */}
-      <div className="absolute inset-0 opacity-[0.02]">
-        <div className="w-full h-full bg-[linear-gradient(rgba(0,0,0,1)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,1)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
-      </div>
+    <section ref={sectionRef} className="relative py-32 px-6 overflow-hidden">
 
       <div className="relative max-w-7xl mx-auto">
         {/* Header section */}
         <div className="text-center mb-24">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-zinc-100/80 backdrop-blur-sm text-zinc-600 text-sm font-medium mb-8 border border-zinc-200/50">
-            <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3 animate-pulse"></div>
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-zinc-300 text-sm font-medium mb-8 border border-white/10">
+            <div className="w-2 h-2 bg-emerald-400 rounded-full mr-3 animate-pulse"></div>
             <span>Platform Capabilities</span>
           </div>
 
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extralight text-zinc-900 mb-8 tracking-tight leading-[0.9]">
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extralight text-white mb-8 tracking-tight leading-[0.9]">
             <span className="block">Intelligent by</span>
-            <span className="block font-normal italic bg-gradient-to-r from-zinc-600 via-zinc-500 to-zinc-600 bg-clip-text text-transparent">design</span>
+            <span className="block font-normal italic bg-gradient-to-r from-zinc-400 via-white to-zinc-400 bg-clip-text text-transparent">design</span>
           </h2>
 
-          <p className="text-xl sm:text-2xl text-zinc-500 font-light max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl sm:text-2xl text-zinc-400 font-light max-w-3xl mx-auto leading-relaxed">
             Cutting-edge AI capabilities that transform how you interact with digital content
           </p>
         </div>
@@ -126,7 +115,7 @@ export default function Features() {
               ref={el => cardsRef.current[index] = el}
               className="group"
             >
-              <div className="relative h-full p-8 lg:p-10 rounded-3xl border border-zinc-100 bg-white/80 backdrop-blur-sm hover:bg-white transition-all duration-500 hover:shadow-2xl hover:shadow-zinc-900/5 hover:-translate-y-3 hover:border-zinc-200">
+              <div className="relative h-full p-8 lg:p-10 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-500 hover:-translate-y-3 hover:border-white/20">
                 {/* Gradient border on hover */}
                 <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
 
@@ -143,24 +132,24 @@ export default function Features() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl lg:text-3xl font-light text-zinc-900 mb-6 tracking-tight group-hover:text-zinc-800 transition-colors duration-300">
+                <h3 className="text-2xl lg:text-3xl font-light text-white mb-6 tracking-tight transition-colors duration-300">
                   {feature.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-zinc-600 font-light leading-relaxed text-lg mb-6">
+                <p className="text-zinc-400 font-light leading-relaxed text-lg mb-6">
                   {feature.description}
                 </p>
 
                 {/* Stats */}
                 <div className="flex items-center text-sm">
-                  <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3 animate-pulse"></div>
-                  <span className="text-zinc-500 font-medium">{feature.stats}</span>
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full mr-3 animate-pulse"></div>
+                  <span className="text-zinc-400 font-medium">{feature.stats}</span>
                 </div>
 
                 {/* Arrow indicator on hover */}
                 <div className="absolute bottom-8 right-8 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
-                  <svg className="w-5 h-5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </div>
@@ -172,29 +161,29 @@ export default function Features() {
         {/* Bottom section */}
         <div className="mt-24 text-center">
           <div className="max-w-4xl mx-auto">
-            <div className="p-8 lg:p-12 rounded-3xl bg-gradient-to-br from-zinc-50 to-white border border-zinc-200/80 shadow-sm">
+            <div className="p-8 lg:p-12 rounded-3xl bg-white/5 border border-white/10">
               <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
                 <div className="text-center lg:text-left lg:max-w-md">
-                  <h3 className="text-2xl lg:text-3xl font-light text-zinc-900 mb-4 tracking-tight">
+                  <h3 className="text-2xl lg:text-3xl font-light text-white mb-4 tracking-tight">
                     Built for the future of work
                   </h3>
-                  <p className="text-zinc-600 font-light leading-relaxed">
+                  <p className="text-zinc-400 font-light leading-relaxed">
                     Designed to evolve with your needs, powered by continuous learning and improvement.
                   </p>
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-6">
-                  <div className="text-center px-6 py-4 bg-white rounded-2xl border border-zinc-100 shadow-sm">
-                    <div className="text-3xl font-extralight text-zinc-900 mb-1">50M+</div>
-                    <div className="text-sm text-zinc-500 font-medium">Items Organized</div>
+                  <div className="text-center px-6 py-4 bg-white/5 rounded-2xl border border-white/10">
+                    <div className="text-3xl font-extralight text-white mb-1">50M+</div>
+                    <div className="text-sm text-zinc-400 font-medium">Items Organized</div>
                   </div>
-                  <div className="text-center px-6 py-4 bg-white rounded-2xl border border-zinc-100 shadow-sm">
-                    <div className="text-3xl font-extralight text-zinc-900 mb-1">99.9%</div>
-                    <div className="text-sm text-zinc-500 font-medium">Uptime SLA</div>
+                  <div className="text-center px-6 py-4 bg-white/5 rounded-2xl border border-white/10">
+                    <div className="text-3xl font-extralight text-white mb-1">99.9%</div>
+                    <div className="text-sm text-zinc-400 font-medium">Uptime SLA</div>
                   </div>
-                  <div className="text-center px-6 py-4 bg-white rounded-2xl border border-zinc-100 shadow-sm">
-                    <div className="text-3xl font-extralight text-zinc-900 mb-1">SOC 2</div>
-                    <div className="text-sm text-zinc-500 font-medium">Certified</div>
+                  <div className="text-center px-6 py-4 bg-white/5 rounded-2xl border border-white/10">
+                    <div className="text-3xl font-extralight text-white mb-1">SOC 2</div>
+                    <div className="text-sm text-zinc-400 font-medium">Certified</div>
                   </div>
                 </div>
               </div>

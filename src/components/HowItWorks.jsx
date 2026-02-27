@@ -78,27 +78,22 @@ export default function HowItWorks() {
   ]
 
   return (
-    <section ref={sectionRef} className="relative py-32 px-6 bg-white overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-violet-50 to-transparent rounded-full blur-3xl opacity-60"></div>
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-emerald-50 to-transparent rounded-full blur-3xl opacity-50"></div>
-      </div>
+    <section ref={sectionRef} className="relative py-32 px-6 overflow-hidden">
 
       <div className="relative max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-20">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-zinc-100/80 text-zinc-600 text-sm font-medium mb-8">
-            <span className="w-2 h-2 bg-emerald-500 rounded-full mr-3 animate-pulse"></span>
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 text-zinc-300 text-sm font-medium mb-8 border border-white/10">
+            <span className="w-2 h-2 bg-emerald-400 rounded-full mr-3 animate-pulse"></span>
             <span>How It Works</span>
           </div>
 
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extralight text-zinc-900 mb-8 tracking-tight leading-[0.9]">
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extralight text-white mb-8 tracking-tight leading-[0.9]">
             <span className="block">Simple.</span>
-            <span className="block font-normal italic bg-gradient-to-r from-zinc-600 via-zinc-500 to-zinc-600 bg-clip-text text-transparent">Powerful.</span>
+            <span className="block font-normal italic bg-gradient-to-r from-zinc-400 via-white to-zinc-400 bg-clip-text text-transparent">Powerful.</span>
           </h2>
 
-          <p className="text-xl sm:text-2xl text-zinc-500 font-light max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl sm:text-2xl text-zinc-400 font-light max-w-3xl mx-auto leading-relaxed">
             Get organized in minutes, not hours. Our AI does the heavy lifting so you can focus on what matters.
           </p>
         </div>
@@ -124,17 +119,17 @@ export default function HowItWorks() {
 
                 {/* Content */}
                 <div className={`flex-1 ${index % 2 === 0 ? 'lg:text-right' : 'lg:text-left'} pl-20 lg:pl-0`}>
-                  <div className={`inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-zinc-100 to-white rounded-2xl border border-zinc-200 mb-6 shadow-sm ${index % 2 === 0 ? 'lg:ml-auto' : ''}`}>
-                    <div className="text-zinc-700">
+                  <div className={`inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-white/10 to-white/5 rounded-2xl border border-white/10 mb-6 ${index % 2 === 0 ? 'lg:ml-auto' : ''}`}>
+                    <div className="text-zinc-300">
                       {step.icon}
                     </div>
                   </div>
 
-                  <h3 className="text-3xl lg:text-4xl font-light text-zinc-900 mb-4 tracking-tight">
+                  <h3 className="text-3xl lg:text-4xl font-light text-white mb-4 tracking-tight">
                     {step.title}
                   </h3>
 
-                  <p className="text-lg text-zinc-500 font-light leading-relaxed mb-6 max-w-lg">
+                  <p className="text-lg text-zinc-400 font-light leading-relaxed mb-6 max-w-lg">
                     {step.description}
                   </p>
 
@@ -142,7 +137,7 @@ export default function HowItWorks() {
                     {step.features.map((feature, fIndex) => (
                       <span
                         key={fIndex}
-                        className="px-3 py-1 rounded-full bg-zinc-100 text-zinc-600 text-sm font-medium"
+                        className="px-3 py-1 rounded-full bg-white/10 text-zinc-300 text-sm font-medium border border-white/10"
                       >
                         {feature}
                       </span>
@@ -164,10 +159,10 @@ export default function HowItWorks() {
 
         {/* CTA */}
         <div className="mt-24 text-center">
-          <p className="text-zinc-500 font-light mb-6">Ready to get started?</p>
+          <p className="text-zinc-400 font-light mb-6">Ready to get started?</p>
           <button
             onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
-            className="group inline-flex items-center bg-zinc-900 text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:shadow-xl hover:shadow-zinc-900/20 hover:-translate-y-0.5"
+            className="group inline-flex items-center bg-white text-zinc-900 px-8 py-4 rounded-full font-medium transition-all duration-300 hover:shadow-xl hover:shadow-white/20 hover:-translate-y-0.5"
           >
             Start Your Free Trial
             <svg className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">

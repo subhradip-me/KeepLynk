@@ -28,16 +28,16 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="py-16 px-6 bg-gradient-to-b from-zinc-50 to-white border-t border-zinc-200/80">
+    <footer className="py-16 px-6 border-t border-white/10">
       <div className="max-w-7xl mx-auto">
         {/* Main footer content */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10">
           {/* Brand section */}
           <div className="max-w-sm">
-            <h3 className="text-2xl font-light text-zinc-900 mb-3">
-              Keep<span className="font-medium text-zinc-700">Lynk</span>
+            <h3 className="text-2xl font-light text-white mb-3">
+              Keep<span className="font-medium text-zinc-400">Lynk</span>
             </h3>
-            <p className="text-zinc-500 font-light leading-relaxed">
+            <p className="text-zinc-400 font-light leading-relaxed">
               AI-powered content organization platform that transforms how you manage your digital life.
             </p>
           </div>
@@ -50,7 +50,7 @@ export default function Footer() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-zinc-500 hover:text-zinc-900 transition-colors duration-300 text-sm font-medium"
+                  className="text-zinc-400 hover:text-white transition-colors duration-300 text-sm font-medium"
                 >
                   {link.name}
                 </a>
@@ -63,7 +63,7 @@ export default function Footer() {
                 <a
                   key={social.name}
                   href={social.href}
-                  className="w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-400 hover:bg-zinc-200 hover:text-zinc-700 transition-all duration-300"
+                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-zinc-400 hover:bg-white/20 hover:text-white transition-all duration-300"
                   aria-label={social.name}
                 >
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -76,15 +76,15 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="my-10 border-t border-zinc-200"></div>
+        <div className="my-10 border-t border-white/10"></div>
 
         {/* Bottom section */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-zinc-400 text-sm font-light">
+          <p className="text-zinc-500 text-sm font-light">
             © {currentYear} KeepLynk. All rights reserved.
           </p>
 
-          <div className="flex items-center gap-2 text-xs text-zinc-400">
+          <div className="flex items-center gap-2 text-xs text-zinc-500">
             <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
             <span>All systems operational</span>
           </div>
