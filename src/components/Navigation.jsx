@@ -6,6 +6,17 @@ export default function Navigation() {
   const [activeSection, setActiveSection] = useState('hero')
 
   useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isMobileMenuOpen])
+
+  useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20)
 
@@ -116,16 +127,23 @@ export default function Navigation() {
                 className="relative w-10 h-10 flex flex-col justify-center items-center rounded-full bg-white/10 backdrop-blur-sm border border-white/10 transition-all duration-300"
                 aria-label="Toggle menu"
               >
-                <span
-                  className={`block h-0.5 w-5 bg-zinc-300 transition-all duration-300 ease-out ${
-                    isMobileMenuOpen ? 'rotate-45 translate-y-1' : ''
-                  }`}
-                />
-                <span
-                  className={`block h-0.5 w-5 bg-zinc-300 transition-all duration-300 ease-out mt-1 ${
-                    isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
-                  }`}
-                />
+                <div className="w-5 h-5 relative flex flex-col justify-center items-center">
+                  <span
+                    className={`absolute h-0.5 w-5 bg-zinc-300 transition-all duration-300 ease-out ${
+                      isMobileMenuOpen ? 'rotate-45' : '-translate-y-1.5'
+                    }`}
+                  />
+                  <span
+                    className={`absolute h-0.5 w-5 bg-zinc-300 transition-all duration-300 ease-out ${
+                      isMobileMenuOpen ? 'opacity-0' : 'opacity-100'
+                    }`}
+                  />
+                  <span
+                    className={`absolute h-0.5 w-5 bg-zinc-300 transition-all duration-300 ease-out ${
+                      isMobileMenuOpen ? '-rotate-45' : 'translate-y-1.5'
+                    }`}
+                  />
+                </div>
               </button>
             </div>
           </div>
@@ -135,8 +153,8 @@ export default function Navigation() {
       {/* Mobile Menu Overlay */}
       <div className={`fixed inset-0 z-40 lg:hidden transition-all duration-500 ease-out ${
         isMobileMenuOpen
-          ? 'opacity-100 visible'
-          : 'opacity-0 invisible'
+          ? 'opacity-100 pointer-events-auto'
+          : 'opacity-0 pointer-events-none'
       }`}>
         {/* Backdrop */}
         <div

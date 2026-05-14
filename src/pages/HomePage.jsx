@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import screenHome from '../assets/screens/IMG-20260514-WA0000.jpg'
 import screenSearch from '../assets/screens/IMG-20260514-WA0003.jpg'
 import screenDetail from '../assets/screens/IMG-20260514-WA0001.jpg'
+import appApk from '../assets/apk/keeplynk.apk'
 
 const stats = [
   { value: 'Android', label: 'Available now' },
@@ -81,12 +82,19 @@ export default function HomePage({ navigate }) {
   useEffect(() => {
     const onScroll = () => {
       const currentY = window.scrollY || 0
-      if (currentY > lastScrollY.current + 6) {
+      
+      // Always show at the top
+      if (currentY <= 50) {
         setIsHeaderHidden(false)
-      } else if (currentY < lastScrollY.current - 6) {
+      } else if (currentY > lastScrollY.current + 6) {
+        // Hide when scrolling down
         setIsHeaderHidden(true)
         setIsMenuOpen(false)
+      } else if (currentY < lastScrollY.current - 6) {
+        // Show when scrolling up
+        setIsHeaderHidden(false)
       }
+      
       lastScrollY.current = currentY
     }
 
@@ -118,7 +126,7 @@ export default function HomePage({ navigate }) {
           <a href="/privacy-policy" onClick={handleNavigate('/privacy-policy')}>Privacy</a>
           <a href="/terms" onClick={handleNavigate('/terms')}>Terms</a>
         </nav>
-        <a href="#beta" className="nav-button" onClick={handleAnchor('#beta')}>Download beta</a>
+        <a href={appApk} download="keeplynk.apk" className="nav-button">Download beta</a>
         <button
           type="button"
           className={`hamburger ${isMenuOpen ? 'is-open' : ''}`}
@@ -136,7 +144,7 @@ export default function HomePage({ navigate }) {
             <a href="#how-it-works" onClick={handleAnchor('#how-it-works')}>How it works</a>
             <a href="/privacy-policy" onClick={handleNavigate('/privacy-policy')}>Privacy</a>
             <a href="/terms" onClick={handleNavigate('/terms')}>Terms</a>
-            <a href="#beta" className="nav-button" onClick={handleAnchor('#beta')}>Download beta</a>
+            <a href={appApk} download="keeplynk.apk" className="nav-button">Download beta</a>
           </div>
         </div>
       </header>
@@ -151,7 +159,7 @@ export default function HomePage({ navigate }) {
               searchable library.
             </p>
             <div className="hero-actions">
-              <a href="#beta" className="primary-button" onClick={handleAnchor('#beta')}>Download APK</a>
+              <a href={appApk} download="keeplynk.apk" className="primary-button">Download APK</a>
               <a href="#how-it-works" className="secondary-button" onClick={handleAnchor('#how-it-works')}>See how it works</a>
             </div>
             <div className="stat-row">
@@ -311,7 +319,7 @@ export default function HomePage({ navigate }) {
             </p>
           </div>
           <div className="beta-actions">
-            <a href="#" className="primary-button">Download APK</a>
+            <a href={appApk} download="keeplynk.apk" className="primary-button">Download APK</a>
             <div className="apk-meta">
               <strong>v1.0.0-beta</strong>
               <span>Android 7.0+ · approximately 15 MB</span>

@@ -640,16 +640,16 @@ body::before {
 }
 
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 100;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
   padding: 16px 22px;
-  margin-top: 16px;
   border: 1px solid var(--border);
   border-radius: 22px;
   background: rgba(255, 255, 255, 0.78);
@@ -660,7 +660,7 @@ body::before {
 }
 
 .site-header.is-hidden {
-  transform: translateY(-120%);
+  transform: translate(-50%, -120%);
   opacity: 0;
   pointer-events: none;
 }
