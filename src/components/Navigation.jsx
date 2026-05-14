@@ -123,11 +123,6 @@ export default function Navigation() {
                 />
                 <span
                   className={`block h-0.5 w-5 bg-zinc-300 transition-all duration-300 ease-out mt-1 ${
-                    isMobileMenuOpen ? 'opacity-0' : ''
-                  }`}
-                />
-                <span
-                  className={`block h-0.5 w-5 bg-zinc-300 transition-all duration-300 ease-out mt-1 ${
                     isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
                   }`}
                 />
@@ -208,7 +203,7 @@ export default function Navigation() {
             }`}
             style={{ transitionDelay: '600ms' }}
             >
-              <div className="w-16 h-px bg-gradient-to-r from-transparent via-zinc-300 to-transparent mx-auto"></div>
+              <div className="w-16 h-px bg-linear-to-r from-transparent via-zinc-300 to-transparent mx-auto"></div>
               <p className="text-sm text-zinc-400 font-light mt-4 tracking-widest">
                 AI-POWERED ORGANIZATION
               </p>
